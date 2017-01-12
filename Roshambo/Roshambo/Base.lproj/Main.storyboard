@@ -113,32 +113,43 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Fi-ag-DCo">
                                 <rect key="frame" x="164" y="520" width="46" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Ok"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="OK"/>
                                 <connections>
                                     <action selector="dismissView:" destination="w5X-Os-YaT" eventType="touchUpInside" id="HaP-aP-vsn"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6h-nx-62w">
+                                <rect key="frame" x="16" y="366" width="343" height="27"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.96244407959643608" green="1" blue="0.53141452890645069" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="z8l-Y1-Q2I" secondAttribute="trailing" constant="52" id="82W-Ks-Qdc"/>
                             <constraint firstItem="Tjh-qe-0RP" firstAttribute="top" secondItem="z8l-Y1-Q2I" secondAttribute="bottom" constant="367" id="9Pk-y8-JTj"/>
                             <constraint firstItem="Tjh-qe-0RP" firstAttribute="top" secondItem="4Fi-ag-DCo" secondAttribute="bottom" constant="117" id="Du3-tu-5yP"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="k6h-nx-62w" secondAttribute="leading" id="Jah-d5-yGu"/>
                             <constraint firstItem="z8l-Y1-Q2I" firstAttribute="leading" secondItem="R9J-Uc-i0V" secondAttribute="leadingMargin" constant="51" id="LmF-Jt-zEU"/>
+                            <constraint firstItem="Tjh-qe-0RP" firstAttribute="top" secondItem="k6h-nx-62w" secondAttribute="bottom" constant="274" id="O86-al-E35"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="k6h-nx-62w" secondAttribute="trailing" id="RxE-Mx-3mM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4Fi-ag-DCo" secondAttribute="trailing" constant="149" id="cPU-OT-6QE"/>
                             <constraint firstItem="4Fi-ag-DCo" firstAttribute="top" secondItem="eBy-Zb-1qj" secondAttribute="bottom" constant="500" id="fX0-uE-cKG"/>
+                            <constraint firstItem="k6h-nx-62w" firstAttribute="top" secondItem="eBy-Zb-1qj" secondAttribute="bottom" constant="346" id="fiT-pl-Ogt"/>
                             <constraint firstItem="4Fi-ag-DCo" firstAttribute="leading" secondItem="R9J-Uc-i0V" secondAttribute="leadingMargin" constant="148" id="iai-Df-0nH"/>
                             <constraint firstItem="z8l-Y1-Q2I" firstAttribute="top" secondItem="eBy-Zb-1qj" secondAttribute="bottom" constant="152" id="y4y-Bi-nE4"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="displayResultMsg" destination="k6h-nx-62w" id="Gia-vC-p5s"/>
                         <outlet property="gameResult" destination="z8l-Y1-Q2I" id="izs-ML-Bmh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kLw-Xz-BgW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1094" y="42"/>
+            <point key="canvasLocation" x="1348" y="41.829085457271368"/>
         </scene>
     </scenes>
     <resources>

@@ -10,14 +10,19 @@ import UIKit
 
 class ResultViewController: UIViewController {
 
+    @IBOutlet weak var displayResultMsg: UILabel!
     @IBOutlet weak var gameResult: UIImageView!
+    
+//    var ViewInfo: [String] = []
+    
     var imageToDisplay: String?
     var msgToDisplay: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         gameResult.image = UIImage(named: imageToDisplay!)
-        // Do any additional setup after loading the view.
+        displayResultMsg.text = msgToDisplay
+               // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

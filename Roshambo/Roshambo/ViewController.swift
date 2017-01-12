@@ -32,10 +32,14 @@ class ViewController: UIViewController {
         
         let controller = segue.destination as! ResultViewController
         if(segue.identifier == "scissorSegue"){
-             controller.imageToDisplay = self.getImageToDisplay( buttonSelected: play.scissors)
+            let resultVCInfo = self.getImageToDisplay( buttonSelected: play.scissors)
+            controller.imageToDisplay = resultVCInfo.imgeName
+            controller.msgToDisplay = resultVCInfo.msg
         }
         else {
-             controller.imageToDisplay = self.getImageToDisplay( buttonSelected: play.paper)
+            let resultVCInfo = self.getImageToDisplay( buttonSelected: play.paper)
+            controller.imageToDisplay = resultVCInfo.imgeName
+            controller.msgToDisplay = resultVCInfo.msg
         }
     }
     
@@ -45,56 +49,47 @@ class ViewController: UIViewController {
         case play.rock.rawValue:
             var controller: ResultViewController
             controller = self.storyboard?.instantiateViewController(withIdentifier: "ResultViewController") as! ResultViewController
-            controller.imageToDisplay = self.getImageToDisplay(buttonSelected: play.rock)
+            let resultVCInfo = self.getImageToDisplay( buttonSelected: play.rock)
+            controller.imageToDisplay = resultVCInfo.imgeName
+            controller.msgToDisplay = resultVCInfo.msg
             present(controller, animated: true, completion: nil)
         case play.paper.rawValue:
             performSegue(withIdentifier: "showResult", sender: self)
         default:
             break
         }
-        
-//        if sender.tag == userPlay.rock.rawValue {
-//            var controller: ResultViewController
-//            controller = self.storyboard?.instantiateViewController(withIdentifier: "ResultViewController") as! ResultViewController
-//            controller.imageToDisplay = self.getImageToDisplay(buttonSelected: sender.tag)
-//            present(controller, animated: true, completion: nil)
-//        }
-//        else if(sender.tag == userPlay.paper.rawValue)
-//        {
-//            performSegue(withIdentifier: "showResult", sender: self)
-//
-//                   }
     }
     
-    func getImageToDisplay (buttonSelected: play) -> String{
+    func getImageToDisplay (buttonSelected: play) -> (imgeName: String, msg: String){
         let computerPlay = play(rawValue: oponentsPlay())
         
         switch (buttonSelected){
         case play.rock:
             if(computerPlay == play.paper){
-                return "PaperCoversRock"
+                
+                return ("PaperCoversRock", "Paper Covers Rock. You lost :(")
             }
             else if computerPlay == play.scissors{
-                return "RockCrushesScissors"
+                return ("RockCrushesScissors", "Rock Crushes Scissors. You win! :)")
             }
         case play.paper:
 
             if (computerPlay == play.rock){
-                return "PaperCoversRock"
+                return ("PaperCoversRock", "Paper Covers Rock. You Win! :)")
             }
             else if(computerPlay == play.scissors){
-                return "ScissorsCutPaper"
+                return ("ScissorsCutPaper","Scissors Cut Paper. You lost :(")
             }
         case play.scissors:
             if(computerPlay == play.rock){
-                return "RockCrushesScissors"
+                return ("RockCrushesScissors", "Rock Crushes Scissors. You lost :(")
             }
             else if(computerPlay == play.paper){
-                return "ScissorsCutPaper"
+                return ("ScissorsCutPaper", "Scissors Cut Paper. You Win! :)")
             }
         }
         
-        return "itsATie"
+        return ("itsATie", "Try again!!")
     }
 
 }
