@@ -17,12 +17,24 @@ class ResultViewController: UIViewController {
     
     var imageToDisplay: String?
     var msgToDisplay: String?
+    var playResult: RPSstruct.gameResult?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         gameResult.image = UIImage(named: imageToDisplay!)
-        displayResultMsg.text = msgToDisplay
-               // Do any additional setup after loading the view.
+        
+        let resultString: String
+        if(playResult == RPSstruct.gameResult.loss){
+            resultString = "You loss."
+        }
+        else if(playResult == RPSstruct.gameResult.win){
+            resultString = "You Win!"
+        }
+        else{
+            resultString = ""
+        }
+        
+        displayResultMsg.text = msgToDisplay! + " " + resultString
     }
 
     override func didReceiveMemoryWarning() {
