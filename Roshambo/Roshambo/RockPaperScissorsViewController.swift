@@ -63,7 +63,10 @@ class RockPaperScissorsViewController: UIViewController {
             controller.imageToDisplay = resultVCInfo.imageName
             controller.msgToDisplay = resultVCInfo.messageToDisplay
             controller.playResult = resultVCInfo.playResult
-            present(controller, animated: true, completion: nil)
+            self.navigationController?.pushViewController(controller, animated: true) // add navigationController
+
+            //without navigationController
+            //present(controller, animated: true, completion: nil)
         case play.paper.rawValue:
             performSegue(withIdentifier: "showResult", sender: self)
         default:

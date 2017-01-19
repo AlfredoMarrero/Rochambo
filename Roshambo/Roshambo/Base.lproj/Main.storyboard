@@ -52,7 +52,7 @@
                                                         <accessibility key="accessibilityConfiguration" identifier="scissors"/>
                                                         <state key="normal" image="scissors"/>
                                                         <connections>
-                                                            <segue destination="w5X-Os-YaT" kind="modal" identifier="scissorSegue" id="vIA-0z-VIk"/>
+                                                            <segue destination="w5X-Os-YaT" kind="push" identifier="scissorSegue" id="BlS-ub-ACP"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -108,7 +108,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="C8p-5H-NJ6"/>
                     <connections>
-                        <segue destination="w5X-Os-YaT" kind="modal" identifier="showResult" id="Ucp-gS-tFS"/>
+                        <segue destination="w5X-Os-YaT" kind="push" identifier="showResult" id="Fvd-q7-ljo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -161,6 +161,7 @@
                             <constraint firstItem="z8l-Y1-Q2I" firstAttribute="top" secondItem="eBy-Zb-1qj" secondAttribute="bottom" constant="152" id="y4y-Bi-nE4"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="cug-tn-IVP"/>
                     <connections>
                         <outlet property="displayResultMsg" destination="k6h-nx-62w" id="Gia-vC-p5s"/>
                         <outlet property="gameResult" destination="z8l-Y1-Q2I" id="izs-ML-Bmh"/>
@@ -268,6 +269,6 @@
         <image name="scissors" width="75" height="65"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ucp-gS-tFS"/>
+        <segue reference="Fvd-q7-ljo"/>
     </inferredMetricsTieBreakers>
 </document>
